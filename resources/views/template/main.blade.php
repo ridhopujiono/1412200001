@@ -30,7 +30,7 @@
     <link href="{{asset('web/css/styles.css')}}" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="{{asset('web/images/logo.png')}}">
+    <link rel="icon" href="{{asset('logo_ico.ico')}}">
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
