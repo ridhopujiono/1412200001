@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>AKADEMIK</h1>
+                <h1>MATA KULIAH YANG DIAMBIL</h1>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumbs">
-                    <a href="{{url('/utama')}}">Beranda</a><i class="fa fa-angle-double-right"></i><span>Akademik</span>
+                    <a href="{{url('/utama')}}">Beranda</a><i class="fa fa-angle-double-right"></i><span>Mata Kuliah Yang Diambil</span>
                 </div> <!-- end of breadcrumbs -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -33,15 +33,38 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="text-container">
-                    <h3>Pelaksanaan PKKMB 2021</h3>
-                    <p>TUBAN– Pelaksanaan Pengenalan Kehidupan Kampus bagi Mahasiswa Baru (PKKMB) Universitas PGRI Ronggolawe (Unirow) Tuban Tahun 2021 dimulai dari Tanggal 15 s.d 18 September 2021. PKKMB ini diikuti oleh 536 Mahasiswa Baru dari 16 Program Studi di 5 Fakultas. Pembukaan PKKMB dilaksanakan secara Daring dan secara Luring yang berpusat di Kampus Unirow Tuban.</p>
-                    <p>Tujuan dari adanya PKKMB ini adalah untuk memberikan bekal kepada mahasiswa baru agar dapat lebih cepat beradaptasi dengan lingkungan kampus dan sistem Pendidikan di perguruan tinggi untuk merancang generasi unggul, lincah dan Tangguh.September 15, 2021Akademik, Berita, Kegiatan, Kemahasiswaanpkkmb2021, unirowsmartAdmin TUBAN– Pelaksanaan Pengenalan Kehidupan Kampus bagi Mahasiswa Baru (PKKMB) Universitas PGRI Ronggolawe (Unirow) Tuban Tahun 2021 dimulai dari Tanggal 15 s.d 18 September 2021.PKKMB ini diikuti oleh 536 Mahasiswa Baru dari 16 Program Studi di 5 Fakultas.</p>
-                    <p>Pembukaan PKKMB dilaksanakan secara Daring dan secara Luring yang berpusat di Kampus Unirow Tuban. Tujuan dari adanya PKKMB ini adalah untuk memberikan bekal kepada mahasiswa baru agar dapat lebih cepat beradaptasi dengan lingkungan kampus dan sistem Pendidikan di perguruan tinggi untuk merancang generasi unggul, lincah dan Tangguh. Wakil Rektor III Unirow Tuban Suantoko, M.Pd yang sekaligus Ketua Panitia PKKMB menjelaskan bahwa pelaksanaan PKKMB Tahun ini ada yang berbeda dengan sebelumnya. Tahun ini PKKMB Unirow dimeriahkan dengan berbagai Event, mulai dari Lomba Instagram Reels sampai dengan Gerakan Upload Flayer PKKMB. Selain itu, yang tidak kalah penting adalah adanya sambutan dari Menteri Pendidikan, Kebudayaan, Riset dan Teknologi (Mendikbud ristek) Nadiem Makarim dan hadirnya Guru Besar dari Universitas Brawijaya Prof. Dr. Marjono, M.Phil. "Kita akan membuat PKKMB ini menjadi kegiatan yang menarik tanpa mengurangi Tujuan utama, yaitu dengan adanya event dan hadirnya para Tokoh” Jelasnya. Hal lain juga disampaikan oleh Rektor Unirow Tuban Prof. Dr. Supiana Dian Nurtjahyani, M.Kes bahwa PKKMB merupakan kewajiban bagi pimpinan perguruan tinggi untuk mengenalkan kehidupan kampus bagi mahasiswa baru sebelum melaksanakan dan menempuh studi di perguruan tinggi ini.</p>
-                    <p>Beliau juga menyampaikan kepada Mahasiswa Baru bahwa dengan diterimanya mereka maka ini kesempatan kesempatan emas, karena tidak semua orang bisa menempuh studi di Perguruan tinggi. “Dengan adanya PKKMB, mahasiswa bisa segera beradaptasi untuk belajar di perguruan tinggi.
-                    <p>Karena adaptasi merupakan hal penting bagaimana mahasiswa bisa berproses untuk menyiapkan diri dalam menempuh studi ditingkat sarjana.” Jelas Prof. Dian sapaan Akrabnya. Rektor Perempuan yang telah membawa Unirow menjadi Kampus terbaik di Karisidenan Bojonegoro ini juga menyampaikan bahwa hal yang tidak kalah penting adalah PKKMB selain mengenalkan kehidupan kampus juga menanamkan Gerakan Nasional Revolusi Mental dengan Indonesia Melayani, Indonesia Bersih, Indonesia Tertib, Indonesia mandiri dan Indonesia Bersatu. “Sehingga sangatlah tepat tema PKKMB Tahun ini Mewujudkan Mahasiswa Yang Adaptif, Inovatif, Kreatif, Dan Kolaboratif Menuju Indonesia Tangguh Melalui Pkkmb Unirow 2021” Jelas Rektor Dua Periode Tersebut. Disisi lain, sambutan Menteri Pendidikan, Kebudayaan, Riset dan Teknologi (Mendikbud ristek) Nadiem Makarim yang ditampilkan dalam PKKMB Unirow Tahun 2021 bahwa beliau berpesan kepada Mahasiswa supaya dapat memanfaatkan masa kuliah guna mengenal dirinya dalam membangun jembatan untuk meraih mimpi dan berkontribusi untuk Negeri. Beliau juga mengajak mahasiswa untuk dapat berpartisipasi dalam Program Merdeka Belajar Kampus Merdeka (MBKM) “Saya percaya kemerdekaan adalah nafas pemuda, nafas mahasiswa para generasi penerus bangsa” Ungkapnya.</p>
-                    <a class="btn-outline-reg" href="index.html">KEMBALI</a>
-                </div> <!-- end of text-container -->
+                @if(session('success'))
+                <div class="alert alert-success">
+                    Berhasil menghapus salah satu mata kuliah yang anda pilih
+                </div>
+                @endif
+                <table class="table table-striped mt-3">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nama Mata Kuliah</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php
+                        $no = 1;
+                        @endphp
+
+                        @csrf
+                        @foreach($mata_kuliah as $mk)
+                        <tr>
+                            <td>{{$no++}}</td>
+                            <td>{{$mk->nama_matkul}}</td>
+                            <td>
+                                <a class="btn btn-danger" href="{{url('hapus')}}/{{$mk->id}}">hapus</a>
+                            </td>
+                        </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+
             </div>
         </div> <!-- end of row -->
     </div> <!-- end of container -->
@@ -55,7 +78,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumbs">
-                    <a href="{{url('/')}}">Beranda</a><i class="fa fa-angle-double-right"></i><span>Akademik</span>
+                    <a href="{{url('/')}}">Beranda</a><i class="fa fa-angle-double-right"></i><span>Ambil Mata Kuliah</span>
                 </div> <!-- end of breadcrumbs -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -137,4 +160,19 @@
     </div> <!-- end of container -->
 </div> <!-- end of copyright -->
 <!-- end of copyright -->
+<!-- Scripts -->
+<script src="{{asset('web/js/jquery.min.js')}}"></script>
+<script>
+    $(function() {
+        // bind change event to select
+        $('#jurusan').on('change', function() {
+            var id = $(this).val(); // get selected value
+            if (id) { // require a URL
+                let url = "{{url('ambil_matkul')}}/" + id;
+                window.location = url; // redirect
+            }
+            return false;
+        });
+    });
+</script>
 @endsection

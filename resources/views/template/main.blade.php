@@ -60,7 +60,9 @@
             <!-- end of mobile menu toggle button -->
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto" style="
+                        margin-right: 30px;
+                    ">
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#header">BERANDA <span class="sr-only">(current)</span></a>
                     </li>
@@ -70,20 +72,25 @@
 
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="https://www.youtube.com/watch?v=DvgAfxVz-6M" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">MORE</a>
+                        <a class="nav-link dropdown-toggle page-scroll" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">MORE</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="fakultas.html"><span class="item-text">FAKULTAS</span></a>
+                            <a class="dropdown-item" href="{{url('fakultas')}}"><span class="item-text">FAKULTAS</span></a>
                             <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="akademik.html"><span class="item-text">AKADEMIK</span></a>
+                            <a class="dropdown-item" href="{{url('akademik')}}"><span class="item-text">AKADEMIK</span></a>
                             <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="konversi.php"><span class="item-text">KONVERSI</span></a>
+                            <a class="dropdown-item" href="{{url('ambil_matkul')}}"><span class="item-text">AMBIL MATKUL</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="{{url('lihat_hasil')}}"><span class="item-text">LIHAT HASIL</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+
                         </div>
                     </li>
                     <!-- end of dropdown menu -->
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{url('logout')}}">LOGOUT</a>
+                    </li>
                 </ul>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="log-in.html">MASUK</a>
-                </span>
+
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->

@@ -9,15 +9,20 @@
                 <p>Anda Tidak Memiliki Akun ? Silahkan <a class="white" href="{{url('sign-up')}}">Daftar</a></p>
                 <!-- Sign Up Form -->
                 <div class="form-container">
-                    <form id="logInForm" data-toggle="validator" data-focus="false">
-
+                    @error('npm')
+                    <div class="alert alert-danger">
+                        Data tidak ditemukan
+                    </div>
+                    @enderror
+                    <form action="{{url('auth')}}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <input type="text" name="npm" class="form-control-input" required>
                             <label class="label-control" for="lemail">NPM</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control-input" id="lpassword" required>
+                            <input type="password" name="password" class="form-control-input" id="lpassword" required>
                             <label class="label-control" for="lpassword">Kata Sandi</label>
                             <div class="help-block with-errors"></div>
                         </div>
